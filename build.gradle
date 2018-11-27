@@ -19,6 +19,9 @@ buildscript {
   repositories {
     mavenCentral()
     jcenter()
+    maven {
+      url "https://mirrors.huaweicloud.com/repository/maven/"
+    }
   }
   apply from: file('gradle/buildscript.gradle'), to: buildscript
 
@@ -558,6 +561,7 @@ project(':core') {
     compile libs.scalaReflect
     compile libs.scalaLogging
     compile libs.slf4jApi
+    compile libs.slf4jlog4j
     compile(libs.zkclient) {
       exclude module: 'zookeeper'
     }
